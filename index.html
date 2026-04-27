@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Gijón - Búsqueda y Distancias</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗺️ Mapa de Gijón</h1>
+            <p>Busca lugares, obtén coordenadas y mide distancias</p>
+        </header>
+
+        <div class="controls-panel">
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Busca un lugar en Gijón...">
+                <button id="searchBtn">🔍 Buscar</button>
+            </div>
+
+            <div class="coordinates-section">
+                <h3>Coordenadas</h3>
+                <div>
+                    <label>Latitud:</label>
+                    <input type="number" id="latInput" placeholder="Latitud" step="0.0001">
+                </div>
+                <div>
+                    <label>Longitud:</label>
+                    <input type="number" id="lonInput" placeholder="Longitud" step="0.0001">
+                </div>
+                <button id="goToCoordinates">📍 Ir a coordenadas</button>
+            </div>
+
+            <div class="tools-section">
+                <button id="distanceMode" class="tool-btn">📏 Medir distancia</button>
+                <button id="satelliteMode" class="tool-btn">🛰️ Ver satélite</button>
+                <button id="normalMode" class="tool-btn">🗺️ Mapa normal</button>
+                <button id="clearAll">🗑️ Limpiar</button>
+            </div>
+
+            <div class="info-section">
+                <h3>Información</h3>
+                <p id="infoText">Haz clic en el mapa para obtener coordenadas</p>
+                <p id="distanceText"></p>
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
